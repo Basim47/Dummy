@@ -31,6 +31,7 @@ const TimerClock = observer(() => {
             onChange={text => myTimer.setMint(text)}
           />
         </View>
+        <Btn onPress={() => myTimer.pause()} text={'Pause Timer'} />
       </View>
       <View style={styles.btnView}>
         <Btn onPress={() => myTimer.start()} text={'Start Timer'} />
