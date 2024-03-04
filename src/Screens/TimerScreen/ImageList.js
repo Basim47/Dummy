@@ -1,44 +1,42 @@
 import {Text, View} from 'react-native';
 import React from 'react';
-import {createTimer} from '../../mobX/store';
 import {observer} from 'mobx-react';
 import {styles} from './styles';
 import Btn from '../../components/Btn';
 import AppInput from '../../components/AppInput';
 import ClockView from '../../components/ClockView';
+import {useNavigation} from '@react-navigation/native';
+import store from '../../mobX/store';
 
-const myTimer = createTimer();
-
-const TimerClock = observer(() => {
+const TimerClock = () => {
+  const navigation = useNavigation();
   return (
     <View style={styles.wrapper}>
+      <Text style={styles.time}>Set Time</Text>
       <View style={styles.timerView}>
         <ClockView
-          hours={myTimer.hoursPassed}
-          mints={myTimer.mintsPassed}
-          secs={myTimer.secsPassed}
+          hours={store.hoursPassed}
+          mints={store.mintsPassed}
+          secs={store.secsPassed}
         />
         <View style={styles.timeSet}>
           <AppInput
             placeholder={'HH'}
-            value={myTimer.hoursPassed}
-            onChange={text => myTimer.setHours(text)}
+            value={store.hoursPassed}
+            onChange={text => store.setHours(text)}
           />
           <Text style={styles.time}>:</Text>
           <AppInput
             placeholder={'MM'}
-            value={myTimer.mintsPassed}
-            onChange={text => myTimer.setMint(text)}
+            value={store.mintsPassed}
+            onChange={text => store.setMint(text)}
           />
         </View>
-        <Btn onPress={() => myTimer.pause()} text={'Pause Timer'} />
       </View>
       <View style={styles.btnView}>
-        <Btn onPress={() => myTimer.start()} text={'Start Timer'} />
-        <Btn onPress={() => myTimer.reset()} text={'Reset Timer'} />
+        <Btn onPress={() => navigation.navigate('SetTime')} text={'SET !'} />
       </View>
     </View>
   );
-});
-
-export default TimerClock;
+};
+export default observer(TimerClock);

@@ -19,7 +19,7 @@ export default AppInput;
 const styles = StyleSheet.create({
   timeSetter: {
     color: 'black',
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: 'bold',
     width: 70,
     alignItems: 'center',

@@ -13,19 +13,20 @@ export default Btn;
 
 const styles = StyleSheet.create({
   btn: {
-    width: 140,
-    height: 50,
-    borderRadius: 20,
+    borderRadius: 50,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     borderWidth: 2,
     borderColor: '#fff',
-    elevation: 7,
+    elevation: 8,
+    marginVertical: 10,
   },
   btnText: {
-    fontSize: 16,
+    fontSize: 20,
     color: '#000',
     fontWeight: 'bold',
+    marginVertical: 14,
+    marginHorizontal: 34,
   },
 });

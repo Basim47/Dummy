@@ -23,8 +23,8 @@ export default ClockView;
 
 const styles = StyleSheet.create({
   container: {
-    width: '95%',
-    height: 150,
+    width: '100%',
+    height: 190,
     backgroundColor: '#fff',
     borderRadius: 30,
     elevation: 7,
@@ -35,16 +35,16 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
   },
   digitView: {
-    width: '18%',
-    height: 50,
+    width: '22%',
+    height: 90,
     backgroundColor: '#fff',
     elevation: 7,
-    borderRadius: 10,
+    borderRadius: 25,
     alignItems: 'center',
     justifyContent: 'center',
   },
   time: {
-    fontSize: 28,
+    fontSize: 32,
     color: '#000',
     fontWeight: 'bold',
   },

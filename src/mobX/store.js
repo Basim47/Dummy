@@ -1,6 +1,6 @@
 import {makeAutoObservable} from 'mobx';
 
-export const createTimer = () => {
+const createTimer = () => {
   return makeAutoObservable({
     timer: null,
     secsPassed: 0,
@@ -45,3 +45,7 @@ export const createTimer = () => {
     },
   });
 };
+
+const store = createTimer();
+
+export default store;
