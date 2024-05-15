@@ -9,7 +9,6 @@ const HomeScreen = () => {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        statusBarTranslucent: true,
         statusBarColor: 'white',
         statusBarStyle: 'dark',
       }}>
